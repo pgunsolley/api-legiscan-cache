@@ -46,6 +46,10 @@ class CreateSessionPersonRecordPeople extends BaseMigration
             ->addColumn('state_federal', 'integer', $notNull + $unsigned)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('session_person_record_id', 'session_person_records')
+            ->addIndex('people_id')
+            ->addIndex('party_id')
+            ->addIndex('state_id')
             ->create();
     }
 }

@@ -44,6 +44,8 @@ class CreateAmendmentRecords extends BaseMigration
             ->addColumn('alt_doc', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('amendment_id')
+            ->addIndex('bill_id')
             ->create();
     }
 }

@@ -33,6 +33,8 @@ class CreateBillRecordSessions extends BaseMigration
             ->addColumn('session_name', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('state_id')
             ->create();
     }
 }

@@ -42,6 +42,9 @@ class CreateBillRecords extends BaseMigration
             ->addColumn('pending_committee_id', 'integer', $notNull + $unsigned)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('bill_id')
+            ->addIndex('session_id')
+            ->addIndex('state_id')
             ->create();
     }
 }

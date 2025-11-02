@@ -41,6 +41,8 @@ class CreateBillRecordSupplements extends BaseMigration
             ->addColumn('alt_supplement_hash', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('supplement_id')
             ->create();
     }
 }

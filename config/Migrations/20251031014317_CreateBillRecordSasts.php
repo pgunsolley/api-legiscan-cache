@@ -27,6 +27,9 @@ class CreateBillRecordSasts extends BaseMigration
             ->addColumn('sast_bill_id', 'integer', $notNull + $unsigned)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('type_id')
+            ->addIndex('sast_bill_id')
             ->create();
     }
 }

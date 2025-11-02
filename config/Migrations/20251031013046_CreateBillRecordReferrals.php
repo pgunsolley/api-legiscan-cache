@@ -28,6 +28,9 @@ class CreateBillRecordReferrals extends BaseMigration
             ->addColumn('name', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('committee_id')
+            ->addIndex('chamber_id')
             ->create();
     }
 }

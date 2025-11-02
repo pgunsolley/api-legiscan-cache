@@ -36,6 +36,8 @@ class CreateBillRecordAmendments extends BaseMigration
             ->addColumn('amendment_hash', 'string', $notNull + $unsigned)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('amendment_id')
             ->create();
     }
 }

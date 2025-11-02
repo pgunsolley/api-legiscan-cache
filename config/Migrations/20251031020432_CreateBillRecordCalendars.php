@@ -30,6 +30,8 @@ class CreateBillRecordCalendars extends BaseMigration
             ->addColumn('description', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('type_id')
             ->create();
     }
 }

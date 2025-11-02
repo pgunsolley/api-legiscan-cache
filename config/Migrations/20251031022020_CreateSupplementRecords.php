@@ -43,6 +43,8 @@ class CreateSupplementRecords extends BaseMigration
             ->addColumn('alt_doc', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('supplement_id')
+            ->addIndex('bill_id')
             ->create();
     }
 }

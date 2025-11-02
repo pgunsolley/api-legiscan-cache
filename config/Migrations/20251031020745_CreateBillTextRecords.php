@@ -41,6 +41,8 @@ class CreateBillTextRecords extends BaseMigration
             ->addColumn('alt_doc', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('doc_id')
+            ->addIndex('bill_id')
             ->create();
     }
 }

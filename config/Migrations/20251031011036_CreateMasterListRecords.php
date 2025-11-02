@@ -32,6 +32,8 @@ class CreateMasterListRecords extends BaseMigration
             ->addColumn('description', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('bill_id')
+            ->addIndex('number')
             ->create();
     }
 }

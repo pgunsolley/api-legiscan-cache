@@ -36,6 +36,9 @@ class CreateBillRecordVotes extends BaseMigration
             ->addColumn('state_link', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('roll_call_id')
+            ->addIndex('chamber_id')
             ->create();
     }
 }

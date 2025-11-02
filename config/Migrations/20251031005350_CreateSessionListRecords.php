@@ -37,6 +37,8 @@ class CreateSessionListRecords extends BaseMigration
             ->addColumn('name', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('session_id')
+            ->addIndex('state_id')
             ->create();
     }
 }

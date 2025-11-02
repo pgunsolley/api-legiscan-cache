@@ -25,6 +25,8 @@ class CreateBillRecordSubjects extends BaseMigration
             ->addColumn('subject_name', 'string', $notNull)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addForeignKey('bill_record_id', 'bill_records')
+            ->addIndex('subject_id')
             ->create();
     }
 }

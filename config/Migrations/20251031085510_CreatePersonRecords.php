@@ -45,6 +45,8 @@ class CreatePersonRecords extends BaseMigration
             ->addColumn('state_federal', 'integer', $notNull + $unsigned)
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
+            ->addIndex('people_id')
+            ->addIndex('party_id')
             ->create();
     }
 }
